@@ -1,28 +1,42 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" @dblclick.prevent>
+    <header>好果汁百货</header>
+    <MainArea /><SideBar />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import MainArea from "@/components/MainArea";
+import SideBar from "@/components/SideBar";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  components: { MainArea, SideBar },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+header {
+  background-color: #ff0000;
+  height: 8vh;
+  font-size: 4vh;
+  color: #fff;
+  margin-bottom: 1vh;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  line-height: 8vh;
+}
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 </style>
